@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nuxt:
+    build: ./front-end
+    command: bash -c "yarn run dev"
+    volumes:
+      - '.:/nuxtapp'
+    ports:
+      - '3000:3000'
