@@ -1,5 +1,11 @@
 version: '3'
 services:
+  db:
+    image: postgres
+    volumes:
+      - 'pgdata:/var/lib/postgresql/data'
+    ports:
+      - '5432:5432'
   nuxt:
     build: ./front-end
     command: bash -c "yarn run dev"
@@ -7,3 +13,15 @@ services:
       - './front-end:/nuxtapp'
     ports:
       - '3000:3000'
+  rails:
+    build: ./back-end
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 8080 -b '0.0.0.0'"
+    volumes:
+      - './back-end:/railsapp'
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+volumes:
+  pgdata:
+    external: true
