@@ -87,6 +87,18 @@ preferences. See https://nuxtjs.org/guide/installation for more details.
 Change `dev` script in package.json to `HOST=0.0.0.0 nuxt` so that it is
 available on the host machine
 
+#### Configure Nuxt webpack watcher
+
+Something about Windows prevents hot reloading from working without this configuration. Add this to your `nuxt.config.js` file:
+
+```
+watchers: {
+  webpack: {
+    poll: true
+  }
+},
+```
+
 ### Configure database
 
 Next open `./back-end/config/database.yml`.
