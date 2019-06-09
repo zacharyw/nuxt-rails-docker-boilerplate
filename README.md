@@ -76,7 +76,7 @@ If everything went well you should have a directory full of Rails boilerplate.
 
 Run:
 ```bash
-docker-compose run nuxt npx create-nuxt-app ./front-end
+docker-compose run nuxt npx create-nuxt-app .
 ```
 
 This will ask you a few questions, which you should answer based on your
