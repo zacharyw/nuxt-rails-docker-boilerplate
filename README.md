@@ -58,7 +58,7 @@ you'll need to stick with using a Docker volume.
 
 Run:
 ```bash
-docker-compose run --no-deps rails rails new ./back-end --force --database=postgresql --skip-test --api
+docker-compose run --no-deps rails rails new . --force --database=postgresql --skip-test --api
 ```
 
 This will run the `rails new` command on our `rails` service defined in docker-compose.yml.
