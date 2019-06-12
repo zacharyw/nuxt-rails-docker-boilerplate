@@ -1,7 +1,7 @@
 # Nuxt, Rails 5, and Docker boilerplate
 
 This project contains all you need to start developing web apps using
-Vue.js/Nuxt.js on the front end, and Rails 5 in API mode as the back end.
+[Vue.js](https://vuejs.org/)/[Nuxt.js](https://nuxtjs.org/) on the front end, and [Rails](https://rubyonrails.org/) in API mode as the back end.
 
 We'll use docker to run our rails server, nuxt server, and postgres database,
 so this dev environment can be used in any OS. If you mess up or something goes
