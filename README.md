@@ -8,6 +8,8 @@ so this dev environment can be used in any OS. If you mess up or something goes
 wrong, feel free to delete your containers and try again - that's what they're
 there for.
 
+If you want to use Rails for your front end instead of Nuxt, see [my other repo](https://github.com/zacharyw/rails-6-docker-webpacker-quickstart).
+
 ## Prerequisites
 
 * [Git](https://git-scm.com/downloads)
