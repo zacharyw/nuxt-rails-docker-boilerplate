@@ -1,4 +1,4 @@
-# Nuxt, Rails 5, and Docker boilerplate
+# Nuxt, Rails, and Docker boilerplate
 
 This project contains all you need to start developing web apps using
 [Vue.js](https://vuejs.org/)/[Nuxt.js](https://nuxtjs.org/) on the front end, and [Rails](https://rubyonrails.org/) in API mode as the back end.
@@ -23,6 +23,8 @@ For example: `~/Projects/myapp/`
 
 ### Create database volume
 
+*Tip: You can use the same `pgdata` volume across multiple projects.*
+
 Run
 
 ```bash
@@ -32,7 +34,11 @@ docker volume create --name=pgdata
 Docker containers are ephemeral. You can destroy and recreate them as often as you
 want. This volume will allow our DB data to survive such purges.
 
-There is another way to do this: instead of creating a Docker volume, you can
+#### Alternative to database Volume
+*Due to file ownership issues, this approach won't work on Windows and
+you'll need to stick with using a Docker volume.*
+
+Instead of creating a Docker volume, you can
 use the `volumes` attribute under the `db` service, and mount a local
 directory (./tmp/db):
 
@@ -50,9 +56,6 @@ volumes:
   pgdata:
     external: true
 ```
-
-However, due to file ownership issues, this approach won't work on Windows and
-you'll need to stick with using a Docker volume.
 
 ### Create rails application
 
