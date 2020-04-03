@@ -10,6 +10,8 @@ there for.
 
 If you want to use Rails for your front end instead of Nuxt, see [my other repo](https://github.com/zacharyw/rails-6-docker-webpacker-quickstart).
 
+*Need Rails 5? Go back in time to this commit: 4f7a17d49db8d622a0b40211e101bfae469e2cf7*
+
 ## Prerequisites
 
 * [Git](https://git-scm.com/downloads)
