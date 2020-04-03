@@ -79,20 +79,23 @@ If everything went well you should have a directory full of Rails boilerplate.
 
 Run:
 ```bash
-docker-compose run nuxt npx create-nuxt-app .
+docker-compose run nuxt yarn create nuxt-app .
 ```
 
-This will ask you a few questions, which you should answer based on your
-preferences. See https://nuxtjs.org/guide/installation for more details.
+This will ask you a few questions. Choose `yarn` as the package manager and answer the rest to your preferences.
+
+See https://nuxtjs.org/guide/installation for more details.
 
 #### Configure Nuxt to work with Docker
 
-Change `dev` script in package.json to `HOST=0.0.0.0 nuxt` so that it is
+Change `dev` script in `./package.json` from `nuxt` to `HOST=0.0.0.0 nuxt` so that it is
 available on the host machine
 
 #### Configure Nuxt webpack watcher
 
-Something about Windows prevents hot reloading from working without this configuration. Add this to your `nuxt.config.js` file:
+*Required on Windows*
+
+Something about Windows prevents hot reloading from working without this configuration. Add this to your `./front-end/nuxt.config.js` file:
 
 ```
 watchers: {
@@ -140,22 +143,22 @@ your gemfile or yarn file you'll need to rebuild.
 
 Run
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
-This should start our rails, nuxt, and database containers, as well as run the
+This should start our rails, nuxt, and database containers in the background, as well as run the
 `command` config in docker-compose.yml, which will start our nuxt and rails
 servers.
 
 ### Create database
 
-In another terminal, run:
+Run:
 
 ```bash
 docker ps
 ```
 
-You should see all three defined services running.
+You should see all three defined services (rails, nuxt, postgres) running.
 
 Run:
 
@@ -182,4 +185,6 @@ Remember that you'll need to `docker-compose build` after adding the gem to your
 
 ## Build Your Application
 
-You're now ready to take your application in whatever direction you choose. 
+You're now ready to take your application in whatever direction you choose.
+
+When you're ready to shut down your services, simply run `docker-compose down`.
