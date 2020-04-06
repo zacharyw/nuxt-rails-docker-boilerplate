@@ -6,6 +6,8 @@ services:
       - 'pgdata:/var/lib/postgresql/data'
     ports:
       - '5432:5432'
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
   nuxt:
     build: ./front-end
     command: bash -c "yarn run dev"
